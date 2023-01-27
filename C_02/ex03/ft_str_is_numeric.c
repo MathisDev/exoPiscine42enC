@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 13:09:45 by mamottet          #+#    #+#             */
-/*   Updated: 2023/01/26 09:12:40 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/01/26 19:11:08 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int	ft_str_is_numeric(char *str)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	if (str[0] == 0)
 		return (1);
 	while (str[i])
