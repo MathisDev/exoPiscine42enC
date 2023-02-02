@@ -6,7 +6,7 @@
 /*   By: mamottet <mamottet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 23:48:11 by mamottet          #+#    #+#             */
-/*   Updated: 2023/02/02 14:57:16 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:06:51 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,29 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void	putstr(char *nb)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (nb[i] != '\0')
+	while (str[i])
 	{
-		write(1, &nb[i], 1);
 		i ++;
 	}
-	write(1, "\n", 1);
+	return (i);
+}
+
+void	putstr(char **nb, int argc)
+{
+	int	ii;
+
+	ii = 0;
+	while (ii != argc)
+	{
+		write(1, &argv[ii], ft_strlen(argv[ii]));
+		write(1, "\n", 1);
+		ii ++;
+	}
 }
 
 int	main(int argc, char *argv[])
@@ -43,13 +55,12 @@ int	main(int argc, char *argv[])
 	char	*temp;
 
 	ii = 1;
-	
-	while (ii < argc) 
+	while (ii < argc)
 	{	
 		i = ii + 1;
 		while (i != argc)
 		{
-			if (ft_strcmp(argv[ii],argv[i]) > 0)
+			if (ft_strcmp(argv[ii], argv[i]) > 0)
 			{
 				temp = argv[ii];
 				argv[ii] = argv[i];
@@ -59,11 +70,6 @@ int	main(int argc, char *argv[])
 		}
 		ii ++;
 	}
-	ii = 1;
-	while (ii != argc)
-	{
-		putstr(argv[ii]);
-		ii ++;
-	}
+	putstr(argv, argc);
 	return (0);
 }
