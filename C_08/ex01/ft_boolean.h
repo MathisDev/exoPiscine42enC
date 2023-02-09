@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 10:49:29 by mamottet          #+#    #+#             */
-/*   Updated: 2023/02/08 17:15:21 by mamottet         ###   ########.fr       */
+/*   Created: 2023/02/09 15:07:24 by mamottet          #+#    #+#             */
+/*   Updated: 2023/02/09 15:07:31 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
+# include <unistd.h>
 
-int	ft_strlen(char *str)
-{
-	int	i;
+typedef char	t_bool;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i ++;
-	}
-	return (i);
-}
-
-char	*ft_strdup(char *str)
-{
-	char	*ret;
-	int		i;
-
-	i = 0;
-	ret = (char *) malloc(sizeof(char) * ft_strlen(str));
-	if (!ret)
-		return (NULL);
-	while (str[i])
-	{
-		ret[i] = str[i];
-		i ++;
-	}
-	ret[i] = '\0';
-	return (ret);
-}
+# define FALSE 0
+# define TRUE 1
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define SUCCESS 0
+# define EVEN(X) ((X % 2) == 1 ? 0 : 1)
+#endif

@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 19:16:05 by mamottet          #+#    #+#             */
-/*   Updated: 2023/02/02 20:24:00 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/02/08 01:05:29 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	*ft_range(int min, int max)
 	{
 		return (NULL);
 	}
-	tab = (int*)malloc(range * sizeof(int));
+	tab = (int *) malloc(range * sizeof(int));
 	while (min != max)
 	{
 		tab[i] = min;
